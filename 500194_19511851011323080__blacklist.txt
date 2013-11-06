@@ -1,0 +1,4 @@
+/dev/msm_amrwb/
+/dev/graphics/fb0/
+/dev/graphics/fb2/
+/dev/video2/

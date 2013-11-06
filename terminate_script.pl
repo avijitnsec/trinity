@@ -1,0 +1,13 @@
+my $pid=$ARGV[0];
+system("taskkill /F /PID $pid");
+my $us = "_";
+system("adb wait-for-device");
+my $serial = `adb get-serialno`;
+chomp($serial);
+@timeData = localtime(time);
+my $ct1 = join('', @timeData);
+chomp($ct1);
+$fldr_nm = join "", $serial, $us, $ct1;
+system ("mkdir $fldr_nm");
+system("adb pull /data/local/tmp $fldr_nm");
+system("adb pull \/data\/local\/tmp $fldr_nm");
